@@ -24,7 +24,7 @@ const useChampions = () => {
 		}
 		async function fetchChampions() {
 			const { data } = await fetch(
-				'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/en_US/champion.json'
+				'https://ddragon.leagueoflegends.com/cdn/11.23.1/data/en_US/champion.json'
 			).then(res => res.json());
 
 			const champions = [];
