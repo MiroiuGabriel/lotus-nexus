@@ -98,12 +98,13 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 			return;
 		}
 
-		if (destination.droppableId === 'r') {
-			if (droppables[destination.droppableId].length === 9) return;
-		}
-		if (destination.droppableId.includes('c')) {
-			if (droppables[destination.droppableId].length === 5) return;
-		}
+		// if (destination.droppableId === 'r') {
+		// 	if (droppables[destination.droppableId].length === 9) return;
+		// }
+		// if (destination.droppableId.includes('c')) {
+		// 	if (droppables[destination.droppableId].length === 5) return;
+		// }
+
 		if (source.droppableId === 'list') {
 			const item = avatars[source.index];
 			const dr = droppables[destination.droppableId];
