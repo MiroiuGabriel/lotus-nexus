@@ -36,16 +36,32 @@ const Home: React.FC = () => {
 
 			<Row>
 				<Links>
-					<Rounded>
+					<Rounded
+						href="https://twitter.com/league_of_lotus"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Logo src="/svg/twitter.svg" />
 					</Rounded>
-					<Rounded>
+					<Rounded
+						href="https://www.twitch.tv/league_of_lotus"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Logo src="/svg/twitch.svg" />
 					</Rounded>
-					<Rounded>
+					<Rounded
+						href="https://discord.gg/UzdyYutmmh"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Logo src="/svg/discord.svg" />
 					</Rounded>
-					<Rounded>
+					<Rounded
+						href="https://na.op.gg/multi/query=%20mrkiwiism%2C%20b%C3%A1bs2424%2Cdropz%2C%20xlr8%2Calastair"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<Logo src="/svg/opgg.svg" />
 					</Rounded>
 				</Links>

@@ -112,8 +112,20 @@ export const Input = styled.input`
 export const Link = styled(NavLink)`
 	color: #67aaed;
 	margin-bottom: 16px;
+	font-weight: bold;
+	font-size: 24px;
+
+	&:last-of-type {
+		color: #e33d49;
+	}
 `;
 
+export const Divider = styled.p`
+	color: #67aaed;
+	margin-bottom: 16px;
+	font-weight: bold;
+	font-size: 24px;
+`;
 export const Links = styled.div`
 	gap: 8px;
 	display: flex;

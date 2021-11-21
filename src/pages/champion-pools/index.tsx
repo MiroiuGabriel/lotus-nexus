@@ -146,7 +146,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 		<DragDropContext onDragEnd={onDragEnd}>
 			<Layout>
 				<Links>
-					<Link to="/champion-pools">Lotus</Link>
+					<Link to="/champion-pools">Lotus </Link>
 					<Link to="/champion-pools/enemy">Enemy</Link>
 				</Links>
 				<Column>
@@ -154,7 +154,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 						<>
 							<DraggableList>
 								<DraggableWrapper>
-									<Icon src={`/svg/1.svg`} />
+									<Icon src={`/svg/3.svg`} />
 									<Droppable
 										droppableId="c1"
 										direction="vertical"
@@ -181,7 +181,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 									</Droppable>
 								</DraggableWrapper>
 								<DraggableWrapper>
-									<Icon src={`/svg/2.svg`} />
+									<Icon src={`/svg/5.svg`} />
 									<Droppable
 										droppableId="c2"
 										direction="vertical"
@@ -208,7 +208,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 									</Droppable>
 								</DraggableWrapper>
 								<DraggableWrapper>
-									<Icon src={`/svg/3.svg`} />
+									<Icon src={`/svg/1.svg`} />
 									<Droppable
 										droppableId="c3"
 										direction="vertical"
@@ -235,7 +235,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 									</Droppable>
 								</DraggableWrapper>
 								<DraggableWrapper>
-									<Icon src={`/svg/4.svg`} />
+									<Icon src={`/svg/2.svg`} />
 									<Droppable
 										droppableId="c4"
 										direction="vertical"
@@ -262,7 +262,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 									</Droppable>
 								</DraggableWrapper>
 								<DraggableWrapper>
-									<Icon src={`/svg/5.svg`} />
+									<Icon src={`/svg/4.svg`} />
 									<Droppable
 										droppableId="c5"
 										direction="vertical"
