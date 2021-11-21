@@ -64,6 +64,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 		const search = searchTerm.trim();
 
 		setAvatars(champions.filter(ch => ch.name.includes(search)));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchTerm]);
 
 	useEffect(() => {
@@ -79,6 +80,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 	const droppables = containers[id];
 
 	const onDragEnd = (result: DropResult, provided: ResponderProvided) => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { source, destination, type } = result;
 
 		if (

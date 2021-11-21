@@ -104,6 +104,7 @@ export const Input = styled.input`
 	&:focus {
 		border: 1px solid #67aaed;
 	}
+
 	&:hover {
 		border: 1px solid #67aaed;
 	}
@@ -126,6 +127,7 @@ export const Divider = styled.p`
 	font-weight: bold;
 	font-size: 24px;
 `;
+
 export const Links = styled.div`
 	gap: 8px;
 	display: flex;

@@ -28,6 +28,7 @@ const useChampions = () => {
 			).then(res => res.json());
 
 			const champions = [];
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			for (const [key, champion] of Object.entries(data)) {
 				const champ = champion as any;
 				champions.push({
@@ -43,7 +44,7 @@ const useChampions = () => {
 
 		fetchChampions().then(res => setChampions(res));
 		setLoading(false);
-	}, []);
+	}, [champions.length]);
 
 	return { loading, champions };
 };
