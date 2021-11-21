@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Global } from '@emotion/react';
+import { Navbar } from './components';
+import globalStyle from './GlobalStyles';
+import { Routes, Route } from 'react-router-dom';
+import { ChampionPools, Home, MatchHistory, ScrimSchedule } from './pages';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<Global styles={globalStyle} />
+			<Navbar />
+			<Routes>
+				<Route path="/">
+					<Route index element={<Home />} />
+					<Route
+						path="match-history"
+						element={<MatchHistory />}
+					></Route>
+					<Route path="champion-pools" element={<ChampionPools />}>
+						<Route path="enemy" element={<ChampionPools />}></Route>
+						<Route path="us" element={<ChampionPools />}></Route>
+					</Route>
+					<Route
+						path="scrim-schedule"
+						element={<ScrimSchedule />}
+					></Route>
+				</Route>
+			</Routes>
+		</>
+	);
 }
 
 export default App;
