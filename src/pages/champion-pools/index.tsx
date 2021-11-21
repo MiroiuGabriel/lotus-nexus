@@ -15,6 +15,8 @@ import {
 	Row,
 	Input,
 	Refresh,
+	Links,
+	Link,
 } from './styles/champion-pools';
 import { Title } from '../match-history/styles/match-history';
 import {
@@ -49,7 +51,10 @@ const Champion: React.FC<{
 	);
 };
 
-const ChampionPools: React.FC = () => {
+const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
+	id,
+	boardId,
+}) => {
 	const { champions, loading } = useChampions();
 	const [avatars, setAvatars] = useState(champions);
 	const [searchTerm, setSearchTerm] = useState('');
@@ -71,7 +76,7 @@ const ChampionPools: React.FC = () => {
 		return unsub;
 	}, []);
 
-	const droppables = containers[0];
+	const droppables = containers[id];
 
 	const onDragEnd = (result: DropResult, provided: ResponderProvided) => {
 		const { source, destination, type } = result;
@@ -80,6 +85,13 @@ const ChampionPools: React.FC = () => {
 			!destination ||
 			(source.droppableId === destination.droppableId &&
 				source.index === destination.index)
+		) {
+			return;
+		}
+
+		if (
+			source.droppableId === 'list' &&
+			destination.droppableId === 'list'
 		) {
 			return;
 		}
@@ -114,13 +126,29 @@ const ChampionPools: React.FC = () => {
 			droppables[destination.droppableId].push(item);
 		}
 
-		const docRef = doc(db, 'board', 'cRekW4W0RiiwXJdAstcb');
+		const docRef = doc(db, 'board', boardId);
 		updateDoc(docRef, droppables);
+	};
+
+	const clearBoard = () => {
+		const docRef = doc(db, 'board', boardId);
+		updateDoc(docRef, {
+			c1: [],
+			c2: [],
+			c3: [],
+			c4: [],
+			c5: [],
+			r: [],
+		});
 	};
 
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
 			<Layout>
+				<Links>
+					<Link to="/champion-pools">Lotus</Link>
+					<Link to="/champion-pools/enemy">Enemy</Link>
+				</Links>
 				<Column>
 					{droppables ? (
 						<>
@@ -287,7 +315,10 @@ const ChampionPools: React.FC = () => {
 										</List>
 									)}
 								</Droppable>
-								<Refresh src="/svg/refresh.svg" />
+								<Refresh
+									src="/svg/refresh.svg"
+									onClick={clearBoard}
+								/>
 							</PriorityWrapper>
 						</>
 					) : (

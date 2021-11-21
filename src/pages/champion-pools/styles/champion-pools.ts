@@ -1,19 +1,31 @@
 import styled from '@emotion/styled/macro';
+import { NavLink } from 'react-router-dom';
 
 export const Column = styled.div`
 	display: flex;
 	flex-direction: column;
 `;
 
-export const Champion = styled.img`
+// export const Champion = styled.img`
+// 	border-radius: 4px;
+// 	width: 120px;
+// 	height: 120px;
+// 	user-select: none;
+// `;
+
+export const Champion = styled.div<{ src: string }>`
 	border-radius: 4px;
 	width: 120px;
 	height: 120px;
+	background-image: url(${props => props.src});
 	user-select: none;
+	margin-bottom: 4px;
 `;
 
 export const ChampionsList = styled.div`
-	grid-template-columns: repeat(auto-fit, 1fr);
+	/* grid-template-columns: repeat(auto-fit, 120px); */
+	display: flex;
+	flex-wrap: wrap;
 `;
 
 export const Row = styled.div`
@@ -43,9 +55,9 @@ export const Container = styled.div`
 	padding: 8px 0;
 	margin: 0 auto;
 
-	> img {
+	/* > img {
 		margin-bottom: 4px;
-	}
+	} */
 `;
 
 export const PriorityWrapper = styled.div`
@@ -95,6 +107,16 @@ export const Input = styled.input`
 	&:hover {
 		border: 1px solid #67aaed;
 	}
+`;
+
+export const Link = styled(NavLink)`
+	color: #67aaed;
+	margin-bottom: 16px;
+`;
+
+export const Links = styled.div`
+	gap: 8px;
+	display: flex;
 `;
 
 export const Refresh = styled(Icon)`

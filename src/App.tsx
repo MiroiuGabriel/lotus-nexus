@@ -16,10 +16,24 @@ function App() {
 						path="match-history"
 						element={<MatchHistory />}
 					></Route>
-					<Route path="champion-pools" element={<ChampionPools />}>
-						<Route path="enemy" element={<ChampionPools />}></Route>
-						<Route path="us" element={<ChampionPools />}></Route>
-					</Route>
+					<Route
+						path="champion-pools"
+						element={
+							<ChampionPools
+								id={0}
+								boardId="cRekW4W0RiiwXJdAstcb"
+							/>
+						}
+					></Route>
+					<Route
+						path="champion-pools/enemy"
+						element={
+							<ChampionPools
+								id={1}
+								boardId="lgNuf12gX29cuHlWaIrF"
+							/>
+						}
+					></Route>
 					<Route
 						path="scrim-schedule"
 						element={<ScrimSchedule />}
