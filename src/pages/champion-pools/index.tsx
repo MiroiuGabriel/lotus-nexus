@@ -61,9 +61,11 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 	const [containers, setContainers] = useState<Array<any>>([]);
 	console.log(containers);
 	useEffect(() => {
-		const search = searchTerm.trim();
+		const search = searchTerm.trim().toLocaleLowerCase();
 
-		setAvatars(champions.filter(ch => ch.name.includes(search)));
+		setAvatars(
+			champions.filter(ch => ch.name.toLocaleLowerCase().includes(search))
+		);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchTerm]);
 
