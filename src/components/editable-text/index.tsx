@@ -19,7 +19,7 @@ const EditableText: React.FC<{ title: string; id: string; index: number }> = ({
 		});
 
 		return unsub;
-	}, []);
+	}, [index]);
 
 	const handleTextChange = (text: string) => {
 		const docRef = doc(db, 'next-scrim', id);
