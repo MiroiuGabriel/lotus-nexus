@@ -65,7 +65,7 @@ const ScrimSchedule: React.FC = () => {
 			{rows && (
 				<Grid>
 					<Title>Day</Title>
-					<Icon src={`/svg/5.svg`} />
+					<Icon src={`/svg/3.svg`} />
 					<Icon src={`/svg/5.svg`} />
 					<Icon src={`/svg/1.svg`} />
 					<Icon src={`/svg/2.svg`} />
