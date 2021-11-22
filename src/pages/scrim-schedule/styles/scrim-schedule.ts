@@ -7,6 +7,7 @@ export const Grid = styled.div`
 	margin-top: 32px;
 	place-items: center;
 	text-align: left;
+	margin-bottom: 64px;
 `;
 
 export const Subtitle = styled(Title.withComponent('p'))`

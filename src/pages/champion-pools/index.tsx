@@ -100,14 +100,15 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 			return;
 		}
 
-		// if (destination.droppableId === 'r') {
-		// 	if (droppables[destination.droppableId].length === 9) return;
-		// }
-		// if (destination.droppableId.includes('c')) {
-		// 	if (droppables[destination.droppableId].length === 5) return;
-		// }
-
-		if (source.droppableId === 'list') {
+		if (source.droppableId === destination.droppableId) {
+			const temp = droppables[destination.droppableId][source.index];
+			droppables[destination.droppableId].splice(source.index, 1);
+			droppables[destination.droppableId].splice(
+				destination.index,
+				0,
+				temp
+			);
+		} else if (source.droppableId === 'list') {
 			const item = avatars[source.index];
 			const dr = droppables[destination.droppableId];
 			if (dr.filter((u: any) => u.id === item.id).length > 0) return;
@@ -128,7 +129,11 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 			droppables[source.droppableId] = droppables[
 				source.droppableId
 			].filter((_: any, i: number) => i !== source.index);
-			droppables[destination.droppableId].push(item);
+			droppables[destination.droppableId].splice(
+				destination.index,
+				0,
+				item
+			);
 		}
 
 		const docRef = doc(db, 'board', boardId);

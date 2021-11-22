@@ -60,8 +60,18 @@ const ScrimSchedule: React.FC = () => {
 
 	return (
 		<Layout>
-			<Title>Next Scrim's Multi.gg</Title>
-			<EditableText />
+			<Title>NEXT SCRIM DATE</Title>
+			<EditableText
+				title="NEXT SCRIM DATE..."
+				id="pGh1CcdyWxe0v8s4s22d"
+				index={0}
+			/>
+			<Title style={{ marginTop: 24 }}>Next Scrim's Multi.gg</Title>
+			<EditableText
+				title="NEXT SCRIM'S MULTI.GG..."
+				id="vFrvxMUILjUgpYVF9hja"
+				index={1}
+			/>
 			{rows && (
 				<Grid>
 					<Title>Day</Title>
