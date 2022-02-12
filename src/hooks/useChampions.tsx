@@ -34,7 +34,7 @@ const useChampions = () => {
 				champions.push({
 					id: champ.id,
 					name: champ.name,
-					src: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/champion/${champ.image.full}`,
+					src: `http://ddragon.leagueoflegends.com/cdn/12.3.1/img/champion/${champ.image.full}`,
 				});
 			}
 
