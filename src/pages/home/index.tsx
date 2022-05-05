@@ -18,7 +18,7 @@ const LandingVideo: React.FC = () => {
 				</VideoSkeleton>
 			)}
 			<Video
-				src="/video/intro.mp4"
+				src="/video/intro.webm"
 				autoPlay
 				muted
 				preload="auto"
@@ -37,28 +37,14 @@ const Home: React.FC = () => {
 			<Row>
 				<Links>
 					<Rounded
-						href="https://twitter.com/league_of_lotus"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<Logo src="/svg/twitter.svg" />
-					</Rounded>
-					<Rounded
-						href="https://www.twitch.tv/league_of_lotus"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<Logo src="/svg/twitch.svg" />
-					</Rounded>
-					<Rounded
-						href="https://discord.gg/UzdyYutmmh"
+						href="https://discord.gg/TEFk4BVbkd"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
 						<Logo src="/svg/discord.svg" />
 					</Rounded>
 					<Rounded
-						href="https://na.op.gg/multi/query=%20mrkiwiism%2C%20b%C3%A1bs2424%2Cdropz%2C%20xlr8%2Calastair"
+						href="https://na.op.gg/multisearch/na?summoners=Wup%C3%B2ng%2C+rasaka%2C+rpg+hyper%2C+rpg+drakenus%2C+tslfantasy%2C%2C"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

@@ -28,6 +28,7 @@ import {
 	Subheader,
 	Delete,
 	Draft,
+	EnemyRow,
 } from './styles/match-history';
 import { Layout } from '../Layout/Layout';
 import { Modal } from '../../components';
@@ -172,8 +173,8 @@ const MatchHistory: React.FC = () => {
 					matches.map(match => (
 						<Match key={match.id}>
 							<Row>
-								<LotusNexsus src="/svg/logo.svg" />
-								<TeamName>Lotus Nexus</TeamName>
+								<LotusNexsus src="/images/logo.png" />
+								<TeamName>RPG Nexus</TeamName>
 							</Row>
 							<ScoreBox
 								background={
@@ -186,10 +187,10 @@ const MatchHistory: React.FC = () => {
 							>
 								{match.myScore} - {match.enemyScore}
 							</ScoreBox>
-							<Row>
+							<EnemyRow>
 								<Enemy src={match.src} />
 								<TeamName>{match.team}</TeamName>
-							</Row>
+							</EnemyRow>
 							<Draft
 								href={match.draft}
 								target="_blank"

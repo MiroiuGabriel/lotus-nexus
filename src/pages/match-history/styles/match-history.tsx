@@ -17,7 +17,7 @@ export const Match = styled.div`
 	display: flex;
 	align-items: center;
 	border-bottom: 1px solid #11151e;
-	padding: 16px 0;
+	padding: 4px 0;
 
 	&:first-of-type {
 		border-top: 1px solid #11151e;
@@ -27,10 +27,15 @@ export const Match = styled.div`
 export const Row = styled.div`
 	display: flex;
 	align-items: center;
+	min-width: 140px;
+`;
+
+export const EnemyRow = styled(Row)`
+	min-width: 190px;
 `;
 
 export const LotusNexsus = styled.img`
-	width: 80px;
+	width: 100px;
 `;
 
 export const TeamName = styled.p`
@@ -45,6 +50,9 @@ export const Enemy = styled.img`
 
 export const ScoreBox = styled.div<{ background?: string }>`
 	padding: 8px 16px;
+	display: flex;
+	justify-content: center;
+	min-width: 50px;
 	background-color: ${props => props.background};
 	border-radius: 4px;
 	margin: 0 32px;

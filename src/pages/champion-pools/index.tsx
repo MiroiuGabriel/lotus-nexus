@@ -156,7 +156,7 @@ const ChampionPools: React.FC<{ id: number; boardId: string }> = ({
 		<DragDropContext onDragEnd={onDragEnd}>
 			<Layout>
 				<Links>
-					<Link to="/champion-pools">Lotus </Link>
+					<Link to="/champion-pools">RPG </Link>
 					<Link to="/champion-pools/enemy">Enemy</Link>
 				</Links>
 				<Column>

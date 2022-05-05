@@ -27,8 +27,8 @@ export const Row = styled.div<{ marginTop?: string }>`
 `;
 
 export const Logo = styled.img`
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 120px;
 `;
 
 export const TeamName = styled.p`

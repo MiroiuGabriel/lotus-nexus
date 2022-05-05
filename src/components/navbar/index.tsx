@@ -21,9 +21,9 @@ const Navbar: React.FC = () => {
 		<NavbarWrapper>
 			<Container>
 				<Row marginTop="4px">
-					<Logo src="/svg/logo.svg" />
+					<Logo src="/images/logo.png" />
 					<TeamName>
-						<Lotus>Lotus</Lotus>
+						<Lotus>RPG</Lotus>
 						<Nexus>Nexus</Nexus>
 					</TeamName>
 				</Row>

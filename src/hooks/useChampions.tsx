@@ -24,7 +24,7 @@ const useChampions = () => {
 		}
 		async function fetchChampions() {
 			const { data } = await fetch(
-				'https://ddragon.leagueoflegends.com/cdn/11.23.1/data/en_US/champion.json'
+				'https://ddragon.leagueoflegends.com/cdn/12.8.1/data/en_US/champion.json'
 			).then(res => res.json());
 
 			const champions = [];
@@ -34,7 +34,7 @@ const useChampions = () => {
 				champions.push({
 					id: champ.id,
 					name: champ.name,
-					src: `http://ddragon.leagueoflegends.com/cdn/11.23.1/img/champion/${champ.image.full}`,
+					src: `http://ddragon.leagueoflegends.com/cdn/12.8.1/img/champion/${champ.image.full}`,
 				});
 			}
 
