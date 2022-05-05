@@ -1,7 +1,8 @@
 import styled from '@emotion/styled/macro';
 
 export const Video = styled.video`
-	max-width: 1440px;
+	max-width: 1100px;
+	margin: 0 auto;
 	width: 100%;
 `;
 

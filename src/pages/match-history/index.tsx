@@ -46,6 +46,7 @@ const MatchModal: React.FC = () => {
 			myScore: ev.target.myScore.value.trim(),
 			enemyScore: ev.target.enemyScore.value.trim(),
 			draft: ev.target.draft.value.trim(),
+			date: Date.now(),
 		};
 
 		if (
@@ -144,13 +145,31 @@ const MatchModal: React.FC = () => {
 	);
 };
 
+type MatchType = {
+	draft: string;
+	enemyScore: string;
+	myScore: string;
+	id: string;
+	src: string;
+	team: string;
+	date: number;
+};
+
+const filterDateNewest = (arr: MatchType[]) => {
+	return arr.sort((a, b) => b.date - a.date);
+};
+
 const MatchHistory: React.FC = () => {
-	const [matches, setMatches] = useState<Array<any>>([]);
+	const [matches, setMatches] = useState<Array<MatchType>>([]);
 
 	useEffect(() => {
 		const unsub = onSnapshot(collection(db, 'matches'), snapshot => {
 			setMatches(
-				snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+				filterDateNewest(
+					snapshot.docs.map(
+						doc => ({ ...doc.data(), id: doc.id } as MatchType)
+					)
+				)
 			);
 		});
 
@@ -178,9 +197,9 @@ const MatchHistory: React.FC = () => {
 							</Row>
 							<ScoreBox
 								background={
-									match.enemyScore > match.myScore
+									+match.enemyScore > +match.myScore
 										? '#E33D49'
-										: match.enemyScore === match.myScore
+										: +match.enemyScore === +match.myScore
 										? '#67AAED'
 										: '#6fd666'
 								}
